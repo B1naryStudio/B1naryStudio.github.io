@@ -1,0 +1,42 @@
+<html>
+	<head>
+		<title>Binary Studio</title>
+		<link rel="stylesheet" type="text/css" href="main.css">
+		<meta name="viewport" content="width=device-width" />
+	</head>
+	<body ng-app='binaryApp' ng-controller="MainController">
+		<div class='filters'>
+			<div class='js'>
+				<label>JS</label>
+				<input type='checkbox' />
+			</div>
+			<div class='php'>
+				<label>PHP</label>
+				<input type='checkbox' />
+			</div>
+			<div class='csharp'>
+				<label>C#</label>
+				<input type='checkbox' />
+			</div>
+		</div>
+		<div class='repositoriesWrapper'>
+			<div ng-repeat='repository in repositories' ng-if="repository.language !== null" class='repositoryItem'>
+				<a href='{{repository.html_url}}'>
+					<div class='icon'>
+						<img ng-src='{{icon[repository.language]}}' />
+					</div>
+					<div class="repositoryName">{{repository.name}}</div>
+					<div class="repositoryDescription">{{repository.description}}</div>
+				</a>
+			</div>
+			<div ng-repeat='repository in repositories' ng-if="repository.language === null" class='repositoryItem'>
+				<a href='{{repository.html_url}}'>
+					<div class="repositoryName">{{repository.name}}</div>
+					<div class="repositoryDescription">{{repository.description}}</div>
+				</a>
+			</div>
+		</div>
+	</body>
+	<script src="angular.js"></script>
+	<script src="main.js"></script>
+</html>

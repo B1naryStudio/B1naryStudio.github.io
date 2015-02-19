@@ -1,0 +1,27 @@
+body {
+	background: url('bg.png');
+}
+
+a {
+	text-decoration: none;
+}
+
+.repositoryItem {
+	min-height: 170px;
+	border: 1px solid #aaa;
+	width:225px;
+	float: left;
+	margin: 0 10px 10px 0;
+	background: white;
+}
+
+.icon img {
+	width:40px;
+	height: 40px;
+}
+
+.repositoryName {
+	color: orange;
+	text-decoration: none;
+
+}
