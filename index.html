@@ -5,37 +5,44 @@
 		<meta name="viewport" content="width=device-width" />
 	</head>
 	<body ng-app='binaryApp' ng-controller="MainController">
+	<header></header>
 		<div class='filters'>
 			<div class='js'>
 				<label>JS</label>
-				<input type='checkbox' />
+				<input type='checkbox' ng-model='filter["JavaScript"]'/>
 			</div>
 			<div class='php'>
 				<label>PHP</label>
-				<input type='checkbox' />
+				<input type='checkbox' ng-model='filter["PHP"]'/>
 			</div>
-			<div class='csharp'>
+			<div class='c-sharp'>
 				<label>C#</label>
-				<input type='checkbox' />
+				<input type='checkbox' ng-model='filter["C#"]'/>
 			</div>
 		</div>
+		<div class="publicTotal"><span class="numberOf">{{publicTotal}}</span><span class="underText">Public Repositories</span></div>
 		<div class='repositoriesWrapper'>
-			<div ng-repeat='repository in repositories' ng-if="repository.language !== null" class='repositoryItem'>
+			<div ng-repeat='repository in repositories | filter : filterByCategory' ng-if="repository.language !== null" class='repositoryItem {{repository.language == "C#"? "csharp" : repository.language == "JavaScript" ? "js" : repository.language }}-item'>
 				<a href='{{repository.html_url}}'>
 					<div class='icon'>
 						<img ng-src='{{icon[repository.language]}}' />
 					</div>
-					<div class="repositoryName">{{repository.name}}</div>
+					<p class="repositoryName">{{repository.name}}</p>
 					<div class="repositoryDescription">{{repository.description}}</div>
 				</a>
 			</div>
-			<div ng-repeat='repository in repositories' ng-if="repository.language === null" class='repositoryItem'>
+			<div ng-repeat='repository in repositories | filter : filterByCategory' ng-if="repository.language === null" class='repositoryItem'>
 				<a href='{{repository.html_url}}'>
 					<div class="repositoryName">{{repository.name}}</div>
 					<div class="repositoryDescription">{{repository.description}}</div>
 				</a>
 			</div>
 		</div>
+	<footer>
+		<div class="footer-wrapper">
+			
+		</div>
+	</footer>
 	</body>
 	<script src="angular.js"></script>
 	<script src="main.js"></script>

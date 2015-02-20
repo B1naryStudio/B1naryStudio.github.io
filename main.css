@@ -1,5 +1,17 @@
+@font-face{
+  font-family: 'Oxygen';
+  /*src: url('../fonts/pfbeausanspro-thin.ttf');*/
+  /*src: url('./fonts/Oxygen-Light.ttf');*/
+  src: url('./fonts/TitilliumWeb-Regular.ttf');
+  /*src: url('./fonts/Oxygen-Regular.ttf');*/
+  /*src: url('./fonts/myriad-web-pro.ttf');*/
+}
+
 body {
 	background: url('bg.png');
+	margin:0;
+	padding:0;
+	font-family: 'Oxygen';
 }
 
 a {
@@ -13,15 +25,171 @@ a {
 	float: left;
 	margin: 0 10px 10px 0;
 	background: white;
+	transition: all 0.5s;
+	padding: 15px;
+	position: relative;
+}
+
+.repositoryItem a {
+	overflow: hidden;
+	display: block;
+	height:auto;
+}
+
+.repositoryItem:hover {
+	transition: all 0.5s;
+}
+
+.icon {
+	position: absolute;
+	width:32px;
+	bottom:0;
+	right:0;
 }
 
 .icon img {
-	width:40px;
-	height: 40px;
+	width:22px;
+	height: 22px;
+	padding:5px;
 }
 
 .repositoryName {
-	color: orange;
+	color: darkorange;
 	text-decoration: none;
+	font-size: 20px;
+	font-weight: 700;
+	display: inline;
+	line-height: 1;
+}
 
+.repositoryDescription {
+	color: #777;
+}
+
+input[type="checkbox"]{
+	height:  20px;
+	font:  14px/26px 'pt-sans', 'Helvetica Neue', Arial, Helvetica, Geneva, sans-serif ;
+	padding: 7px 7px 7px 12px ;
+	/*margin: 0 0 30px 0 */
+	background: #FFF ;
+	border: 1px solid #ddd ;
+	outline: none ;
+	color: #96999D ;
+	-webkit-box-shadow:  0 1px 2px rgba(0, 0, 0, 0.1) ;
+	   -moz-box-shadow:  0 1px 2px rgba(0, 0, 0, 0.1) ;
+			box-shadow:  0 1px 2px rgba(0, 0, 0, 0.1)    ;     
+	-webkit-appearance:  none ;
+	-webkit-font-smoothing:  antialiased;
+	-webkit-transition:  all 0.15s ;
+	   -moz-transition:  all 0.15s ;
+		-ms-transition:  all 0.15s ;
+		 -o-transition:  all 0.15s ;
+			transition:  all 0.15s domize-checkbox;
+}
+input[type='checkbox']:focus{
+	color: #2E3236;
+	outline: none;
+}
+input[type='checkbox']:checked{
+	background: orange;
+	position: relative;
+	border-color: orange;
+	outline: none;
+}
+input[type='checkbox']:checked:before{
+	content: '\2713';
+	color: white;
+	width: 15px;
+	height: 15px;
+	position: absolute;
+	top: -4px;
+	font-size: 21px;
+	left: 1px;
+	outline: none;
+}
+input[type='checkbox']:active{
+	outline: none;
+}
+
+footer {
+		background: orange;
+}
+
+footer .footer-wrapper {
+	height:200px;
+	margin:70px auto 20px auto;
+	padding: 0;
+	width:980px;
+}
+
+.repositoriesWrapper {
+	overflow: hidden;
+	height: auto;
+}
+
+
+
+.repositoryItem:hover {
+	background: #eaefef;
+}
+
+.csharp-item:hover{
+	background: #3498DB;
+}
+
+.PHP-item:hover {
+	background: rgb(94, 128, 189);
+}
+
+.repositoryItem.js-item:hover {
+	background: rgb(240, 219, 79);
+}
+
+.repositoryItem.HTML-item:hover {
+	background: #E44D26;
+}
+
+.repositoryItem.HTML-item:hover .repositoryItem,
+.repositoryItem.js-item:hover .repositoryName,
+.repositoryItem.PHP-item:hover .repositoryName,
+.repositoryItem.csharp-item:hover .repositoryName{
+	color:white;
+	text-shadow: 0px 0px 1px rgba(100, 100, 100, 0.7);
+}
+
+.repositoryItem.csharp-item:hover .repositoryDescription{
+	color: gold;
+}
+
+.repositoryItem.js-item:hover .repositoryDescription {
+	color:#555;
+}
+
+.publicTotal {
+	width: 120px;
+	height: 120px;
+	border-radius: 100px;
+	border:3px solid #777;
+	position: relative;
+}
+
+.numberOf {
+	font-size: 60px;
+	width: 100%;
+	text-align: center;
+	display: inline;
+	color: darkorange;
+	position: absolute;
+	line-height: 1;
+	top:10px;
+}
+
+.underText {
+	line-height: 1;
+	display: inline;
+	width: 100%;
+	position: absolute;
+	bottom: 20px;
+	text-align: center;
+	color: #777;
 }
