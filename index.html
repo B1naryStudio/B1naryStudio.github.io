@@ -5,22 +5,31 @@
 		<meta name="viewport" content="width=device-width" />
 	</head>
 	<body ng-app='binaryApp' ng-controller="MainController">
-	<header></header>
-		<div class='filters'>
-			<div class='js'>
-				<label>JS</label>
-				<input type='checkbox' ng-model='filter["JavaScript"]'/>
+	<div class="body-wrapper">
+		<header><img src="https://avatars.githubusercontent.com/u/8556669?v=3"></header>
+		<div class="header-info-block">
+			<div class='filters'>
+				<div class="filter-tip">Filter by cathegory:</div>
+				<div>
+				<div class='js'>
+					<p>JS</p>
+					<input type='checkbox' ng-model='filter["JavaScript"]'/>
+				</div>
+				<div class='php'>
+					<p>PHP</p>
+					<input type='checkbox' ng-model='filter["PHP"]'/>
+				</div>
+				<div class='c-sharp'>
+					<p>C#</p>
+					<input type='checkbox' ng-model='filter["C#"]'/>
+				</div>
+				</div>
 			</div>
-			<div class='php'>
-				<label>PHP</label>
-				<input type='checkbox' ng-model='filter["PHP"]'/>
-			</div>
-			<div class='c-sharp'>
-				<label>C#</label>
-				<input type='checkbox' ng-model='filter["C#"]'/>
+			<div class="statistics">
+				<div class="publicTotal"><span class="numberOf">{{publicTotal}}</span><span class="underText">Public Repos</span></div>
+				<div class="publicTotal"><span class="numberOf">{{stargazersTotal}}</span><span class="underText">Total stars</span></div>
 			</div>
 		</div>
-		<div class="publicTotal"><span class="numberOf">{{publicTotal}}</span><span class="underText">Public Repositories</span></div>
 		<div class='repositoriesWrapper'>
 			<div ng-repeat='repository in repositories | filter : filterByCategory' ng-if="repository.language !== null" class='repositoryItem {{repository.language == "C#"? "csharp" : repository.language == "JavaScript" ? "js" : repository.language }}-item'>
 				<a href='{{repository.html_url}}'>
@@ -38,11 +47,7 @@
 				</a>
 			</div>
 		</div>
-	<footer>
-		<div class="footer-wrapper">
-			
-		</div>
-	</footer>
+	</div>
 	</body>
 	<script src="angular.js"></script>
 	<script src="main.js"></script>

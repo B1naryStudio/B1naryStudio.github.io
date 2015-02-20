@@ -14,6 +14,11 @@ body {
 	font-family: 'Oxygen';
 }
 
+.body-wrapper {
+	width: 1068px;
+	margin: auto;
+}
+
 a {
 	text-decoration: none;
 }
@@ -34,6 +39,7 @@ a {
 	overflow: hidden;
 	display: block;
 	height:auto;
+	min-height: 170px;
 }
 
 .repositoryItem:hover {
@@ -54,7 +60,7 @@ a {
 }
 
 .repositoryName {
-	color: darkorange;
+	color: #4f4f4f;
 	text-decoration: none;
 	font-size: 20px;
 	font-weight: 700;
@@ -148,29 +154,36 @@ footer .footer-wrapper {
 .repositoryItem.HTML-item:hover {
 	background: #E44D26;
 }
+.repositoryItem.js-item:hover .repositoryName {
+	color: #555;
+}
 
 .repositoryItem.HTML-item:hover .repositoryItem,
-.repositoryItem.js-item:hover .repositoryName,
 .repositoryItem.PHP-item:hover .repositoryName,
 .repositoryItem.csharp-item:hover .repositoryName{
 	color:white;
-	text-shadow: 0px 0px 1px rgba(100, 100, 100, 0.7);
+/*	text-shadow: 0px 0px 1px rgba(100, 100, 100, 0.7);*/
 }
 
 .repositoryItem.csharp-item:hover .repositoryDescription{
-	color: gold;
+	color: white;
 }
 
 .repositoryItem.js-item:hover .repositoryDescription {
 	color:#555;
 }
 
+.repositoryItem.PHP-item:hover .repositoryDescription {
+	color:white;
+}
+
 .publicTotal {
-	width: 120px;
-	height: 120px;
+	width: 140px;
+	height: 140px;
 	border-radius: 100px;
 	border:3px solid #777;
 	position: relative;
+	display: inline-block;
 }
 
 .numberOf {
@@ -181,7 +194,7 @@ footer .footer-wrapper {
 	color: darkorange;
 	position: absolute;
 	line-height: 1;
-	top:10px;
+	top:25px;
 }
 
 .underText {
@@ -189,7 +202,60 @@ footer .footer-wrapper {
 	display: inline;
 	width: 100%;
 	position: absolute;
-	bottom: 20px;
+	bottom: 35px;
+	text-align: center;
+	font-size: 15px;
+	color: #777;
+}
+
+footer {
+	position: fixed;
+	bottom: 0;
+	width:100%;
+}
+
+.filters {
+	overflow: hidden;
+	height: 120px;
+	width: 270px;
+	display: inline-block;
+	float: left;
+}
+
+.filters div div {
+	width: 80px;
+	height: 30px;
+	display: inline-block;
+	float: left;
+	padding: 5px;
+	text-align: center;
+}
+
+.filters div div p {
+	text-align: center;
+	color:#777;
+}
+
+.filters div.filter-tip {
+	width:100%;
+	display: block;
 	text-align: center;
 	color: #777;
+}
+
+.header-info-block {
+	margin: 30px 0 30px 0;
+}
+
+.statistics {
+	height: 160px;
+}
+
+.statistics .publicTotal{
+	float: right;
+	margin-left: 20px;
+}
+
+header img {
+	height: 150px;
 }

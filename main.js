@@ -1,12 +1,14 @@
 angular.module('binaryApp',[])
 	.controller('MainController', ['$http', '$scope', function($http, $scope){
 		$scope.publicTotal = 0;
+		$scope.stargazersTotal = 0;
 		$http.get('https://api.github.com/users/B1naryStudio/repos').success(function(data, status, headers, config){
 			$scope.repositories = data;
 			data.forEach(function(item){
 				if (!item.private){
 					$scope.publicTotal++;
 				}
+				$scope.stargazersTotal += item.stargazers_count;
 			});
 		});
 
