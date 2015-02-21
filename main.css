@@ -286,7 +286,7 @@ footer {
 	margin-left: 20px;
 }
 
-header img {
+header img.logo {
 	height: 150px;
 	padding-left: 20px;
 }
@@ -319,4 +319,21 @@ header {
 
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
   display: none !important;
+}
+
+.socials {
+	height: 64px;
+	width: 512px;
+	display: inline-block;
+	float: right;
+	padding: 20px;
+	margin-top: 27px;
+}
+
+.socials img{
+	float:left;
+}
+
+.socials img:hover {
+	cursor: pointer;
 }
