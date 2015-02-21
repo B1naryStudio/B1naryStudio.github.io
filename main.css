@@ -17,6 +17,7 @@ body {
 .body-wrapper {
 	width: 1068px;
 	margin: auto;
+	background: white
 }
 
 a {
@@ -102,20 +103,20 @@ input[type='checkbox']:focus{
 	outline: none;
 }
 input[type='checkbox']:checked{
-	background: orange;
+	background: white;
 	position: relative;
 	border-color: orange;
 	outline: none;
 }
 input[type='checkbox']:checked:before{
 	content: '\2713';
-	color: white;
+	color: orange;
 	width: 15px;
 	height: 15px;
 	position: absolute;
 	top: -4px;
-	font-size: 21px;
-	left: 1px;
+	font-size: 15px;
+	left: 3px;
 	outline: none;
 }
 input[type='checkbox']:active{
@@ -195,9 +196,17 @@ footer .footer-wrapper {
 	width: 140px;
 	height: 140px;
 	border-radius: 100px;
-	border:3px solid #777;
+	border:5px solid #4AC1E3;
 	position: relative;
 	display: inline-block;
+	background: #0B84B9;
+}
+
+.publicTotal hr {
+	position: absolute;
+	border: 1px solid #68C4F5;
+	width: 100px;
+	margin: 85px 20px 20px 20px;
 }
 
 .numberOf {
@@ -205,9 +214,10 @@ footer .footer-wrapper {
 	width: 100%;
 	text-align: center;
 	display: inline;
-	color: darkorange;
+	color: white;
 	position: absolute;
 	line-height: 1;
+	font-weight: 700;
 	top:25px;
 }
 
@@ -219,7 +229,8 @@ footer .footer-wrapper {
 	bottom: 35px;
 	text-align: center;
 	font-size: 15px;
-	color: #777;
+	color: #68C4F5;
+	text-transform: uppercase;
 }
 
 footer {
@@ -230,10 +241,11 @@ footer {
 
 .filters {
 	overflow: hidden;
-	height: 120px;
+	height: 100px;
 	width: 270px;
 	display: inline-block;
 	float: left;
+	padding-top: 20px;
 }
 
 .filters div div {
@@ -248,6 +260,10 @@ footer {
 .filters div div p {
 	text-align: center;
 	color:#777;
+	padding-bottom: 2px;
+	margin-bottom: 2px;
+	color:white;
+	font-weight: bold;
 }
 
 .filters div.filter-tip {
@@ -258,7 +274,7 @@ footer {
 }
 
 .header-info-block {
-	margin: 30px 0 30px 0;
+	margin: 0px 0 30px 0;
 }
 
 .statistics {
@@ -272,6 +288,33 @@ footer {
 
 header img {
 	height: 150px;
+	padding-left: 20px;
+}
+
+header {
+	box-shadow: 0px -4px 4px 1px rgba(100,100,100,0.5);
+	position: relative;
+	background: white;
+	padding-bottom: 20px;
+}
+
+
+.header-info-block {
+	border-bottom: 10px solid transparent;
+	border-top: 10px solid transparent;
+	background-image:
+        linear-gradient(orange, darkorange),
+        linear-gradient(to bottom right, transparent 50.5%, orange 50.5%),
+        linear-gradient(to bottom left, transparent 50.5%, orange 50.5%),
+        linear-gradient(to top right, transparent 50.5%, darkorange 50.5%),
+        linear-gradient(to top left, transparent 50.5%, darkorange 50.5%);
+	background-repeat: repeat, repeat-x, repeat-x, repeat-x, repeat-x;
+	background-position: 0 0, 10px 0, 10px 0, 10px 100%, 10px 100%;
+	background-size: auto auto, 20px 20px, 20px 20px, 20px 20px, 20px 20px;
+	background-clip: padding-box, border-box, border-box, border-box, border-box;
+	background-origin: padding-box, border-box, border-box, border-box, border-box;
+	padding: 20px;
+	box-shadow: 0px -3px 1px 1px rgba(100,100,100,0.5);
 }
 
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {

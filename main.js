@@ -2,6 +2,7 @@ angular.module('binaryApp',[])
 	.controller('MainController', ['$http', '$scope', function($http, $scope){
 		$scope.publicTotal = 0;
 		$scope.stargazersTotal = 0;
+		$scope.forksTotal = 0;
 		$http.get('https://api.github.com/users/B1naryStudio/repos').success(function(data, status, headers, config){
 			$scope.repositories = data;
 			data.forEach(function(item){
@@ -9,6 +10,7 @@ angular.module('binaryApp',[])
 					$scope.publicTotal++;
 				}
 				$scope.stargazersTotal += item.stargazers_count;
+				$scope.forksTotal += item.forks_count;
 			});
 		});
 		$scope.restricted = [30960505];
