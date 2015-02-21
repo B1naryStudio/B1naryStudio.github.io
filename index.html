@@ -3,10 +3,11 @@
 		<title>Binary Studio</title>
 		<link rel="stylesheet" type="text/css" href="main.css">
 		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" href="http://www.binary-studio.com/wp-content/themes/binary-studio/images/favicon/favicon.ico" type="image/x-icon">
 	</head>
-	<body ng-app='binaryApp' ng-controller="MainController">
+	<body ng-app='binaryApp' ng-controller="MainController" ng-cloak>
 	<div class="body-wrapper">
-		<header><img src="https://avatars.githubusercontent.com/u/8556669?v=3"></header>
+		<header><a href="binary-studio.com"><img src="https://avatars.githubusercontent.com/u/8556669?v=3"></a></header>
 		<div class="header-info-block">
 			<div class='filters'>
 				<div class="filter-tip">Filter by cathegory:</div>
@@ -31,7 +32,7 @@
 			</div>
 		</div>
 		<div class='repositoriesWrapper'>
-			<div ng-repeat='repository in repositories | filter : filterByCategory' ng-if="repository.language !== null" class='repositoryItem {{repository.language == "C#"? "csharp" : repository.language == "JavaScript" ? "js" : repository.language }}-item'>
+			<div ng-repeat='repository in repositories | filter : filterByCategory' ng-if="repository.language !== null && contains(repository.id)" class='repositoryItem {{repository.language == "C#"? "csharp" : repository.language == "JavaScript" ? "js" : repository.language }}-item'>
 				<a href='{{repository.html_url}}'>
 					<div class='icon'>
 						<img ng-src='{{icon[repository.language]}}' />

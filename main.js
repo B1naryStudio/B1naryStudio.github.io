@@ -11,18 +11,27 @@ angular.module('binaryApp',[])
 				$scope.stargazersTotal += item.stargazers_count;
 			});
 		});
-
+		$scope.restricted = [30960505];
 		$scope.icon = {
 			'JavaScript' : 'js.png',
 			'PHP' : 'php.png',
 			'C#' : 'csharp.png',
-			'HTML' : 'html.png'
+			'HTML' : 'html.png',
+			'CSS' : 'css3.png'
 		};
 
 		 $scope.filter = {};
 	    
 	    $scope.filterByCategory = function (repository) {
 	        return $scope.filter[repository.language] || noFilter($scope.filter);
+	    };
+
+	    $scope.contains = function(id){
+	    	if (this.restricted.indexOf(id) == -1){
+	    		return true;
+	    	} else {
+	    		return false;
+	    	}
 	    };
 	    
 	    function noFilter(filterObj) {

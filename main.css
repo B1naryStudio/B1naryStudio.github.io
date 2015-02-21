@@ -92,6 +92,11 @@ input[type="checkbox"]{
 		 -o-transition:  all 0.15s ;
 			transition:  all 0.15s domize-checkbox;
 }
+
+input[type="checkbox"]:hover{
+	cursor: pointer;
+}
+
 input[type='checkbox']:focus{
 	color: #2E3236;
 	outline: none;
@@ -151,6 +156,10 @@ footer .footer-wrapper {
 	background: rgb(240, 219, 79);
 }
 
+.repositoryItem.CSS-item:hover {
+	background: #3B9ADB;
+}
+
 .repositoryItem.HTML-item:hover {
 	background: #E44D26;
 }
@@ -158,7 +167,8 @@ footer .footer-wrapper {
 	color: #555;
 }
 
-.repositoryItem.HTML-item:hover .repositoryItem,
+.repositoryItem.HTML-item:hover .repositoryName,
+.repositoryItem.CSS-item:hover .repositoryName,
 .repositoryItem.PHP-item:hover .repositoryName,
 .repositoryItem.csharp-item:hover .repositoryName{
 	color:white;
@@ -174,6 +184,10 @@ footer .footer-wrapper {
 }
 
 .repositoryItem.PHP-item:hover .repositoryDescription {
+	color:white;
+}
+
+.repositoryItem.CSS-item:hover .repositoryDescription {
 	color:white;
 }
 
@@ -258,4 +272,8 @@ footer {
 
 header img {
 	height: 150px;
+}
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
 }
