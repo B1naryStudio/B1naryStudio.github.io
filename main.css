@@ -456,6 +456,10 @@ footer a:hover {
 .rights {
 	padding:20px;
 	text-align: center;
-	font-size: 15px;
+	font-size: 13px;
 	font-weight: bold;
+}
+
+table {
+	font-size: 14px;
 }
