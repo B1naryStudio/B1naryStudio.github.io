@@ -386,6 +386,15 @@ footer .e-mail, footer .socials-footer, footer .address, footer .call-us, .conta
 	border-right: 1px solid rgb(255, 179, 41);
 }
 
+footer .e-mail {
+	width: 275px;
+}
+
+footer .socials-footer {
+	width: 235px;
+}
+
+
 footer .call-us {
 	border-right: none;
 }
