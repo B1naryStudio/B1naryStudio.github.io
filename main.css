@@ -2,8 +2,8 @@
   font-family: 'Oxygen';
   /*src: url('../fonts/pfbeausanspro-thin.ttf');*/
   /*src: url('./fonts/Oxygen-Light.ttf');*/
-  src: url('./fonts/TitilliumWeb-Regular.ttf');
-  /*src: url('./fonts/Oxygen-Regular.ttf');*/
+  /*src: url('./fonts/TitilliumWeb-Regular.ttf');*/
+  src: url('./fonts/Oxygen-Regular.ttf');
   /*src: url('./fonts/myriad-web-pro.ttf');*/
 }
 
@@ -12,12 +12,18 @@ body {
 	margin:0;
 	padding:0;
 	font-family: 'Oxygen';
+	font-size: 15px;
+	line-height: 1.5;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-rendering: optimizeLegibility;
 }
 
 .body-wrapper {
 	width: 1068px;
 	margin: auto;
 	background: white
+
 }
 
 a {
@@ -26,12 +32,13 @@ a {
 
 .repositoryItem {
 	min-height: 170px;
-	border: 1px solid #aaa;
-	width:225px;
+	border: 1px solid #ddd;
+	width:210px;
 	float: left;
-	margin: 0 10px 10px 0;
+	margin: 5px;
 	background: white;
-	transition: all 0.5s;
+	/*transition: all 0.5s ease;*/
+	transition: all 0.5s ease;
 	padding: 15px;
 	position: relative;
 }
@@ -44,7 +51,9 @@ a {
 }
 
 .repositoryItem:hover {
-	transition: all 0.5s;
+	transition: all 0.5s ease;
+	/*transition: color 1000ms ease-out;*/
+	/*transition: background-position 1000ms ease-out;*/
 }
 
 .icon {
@@ -61,11 +70,11 @@ a {
 }
 
 .repositoryName {
-	color: #4f4f4f;
+	color: #1D1D1D;
 	text-decoration: none;
 	font-size: 20px;
 	font-weight: 700;
-	display: inline;
+	display: inline-block;
 	line-height: 1;
 }
 
@@ -128,7 +137,7 @@ footer {
 }
 
 footer .footer-wrapper {
-	height:200px;
+	height:220px;
 	margin:70px auto 20px auto;
 	padding: 0;
 	width:980px;
@@ -137,6 +146,9 @@ footer .footer-wrapper {
 .repositoriesWrapper {
 	overflow: hidden;
 	height: auto;
+	padding-bottom: 20px;
+	padding-right: 30px;
+	padding-left: 30px;
 }
 
 
@@ -147,25 +159,29 @@ footer .footer-wrapper {
 
 .csharp-item:hover{
 	background: #3498DB;
+	border-color: #3498DB;
 }
 
 .PHP-item:hover {
 	background: rgb(94, 128, 189);
+	border-color: rgb(94, 128, 189);
 }
 
 .repositoryItem.js-item:hover {
 	background: rgb(240, 219, 79);
+	border-color: rgb(240, 219, 79);
 }
 
 .repositoryItem.CSS-item:hover {
 	background: #3B9ADB;
+	border-color: #3B9ADB;
 }
 
 .repositoryItem.HTML-item:hover {
 	background: #E44D26;
 }
 .repositoryItem.js-item:hover .repositoryName {
-	color: #555;
+	color: #333;
 }
 
 .repositoryItem.HTML-item:hover .repositoryName,
@@ -234,9 +250,10 @@ footer .footer-wrapper {
 }
 
 footer {
-	position: fixed;
-	bottom: 0;
 	width:100%;
+	height:200px;
+	background: linear-gradient(orange, darkorange);
+	box-shadow: 0px 3px 4px 1px rgba(100,100,100,0.5);
 }
 
 .filters {
@@ -327,13 +344,109 @@ header {
 	display: inline-block;
 	float: right;
 	padding: 20px;
-	margin-top: 27px;
+	margin-top: 10px;
 }
 
 .socials img{
 	float:left;
+	-webkit-filter: grayscale(00%);
+	transition: all 0.5s;
 }
 
 .socials img:hover {
 	cursor: pointer;
+	-webkit-filter: grayscale(0%);
+	transition: all 0.5s;
+	-webkit-transform: rotate(-360deg);
+}
+
+.socials-footer img{
+	width: 32px;
+	border-radius: 100px;
+	-webkit-filter: grayscale(100%);
+	border: 3px solid transparent;
+}
+
+.socials-footer img:hover {
+	-webkit-filter: grayscale(0%);
+}
+
+footer {
+	padding: 20px;
+	box-sizing:border-box;
+	color:white;
+	height:220px;
+}
+
+footer .e-mail, footer .socials-footer, footer .address, footer .call-us, .contact {
+	width: 255px;
+	height: 180px;
+	display: inline-block;
+	float: left;
+	border-right: 1px solid rgb(255, 179, 41);
+}
+
+footer .call-us {
+	border-right: none;
+}
+
+.e-mail hr, .socials-footer hr, .address hr, .call-us hr {
+	width: 100px;
+	border: 1px solid rgb(255, 184, 0);
+}
+
+.e-mail td {
+	color: black;
+	padding: 5px;
+}
+
+.e-mail span, .socials-footer span, .address span, .call-us span {
+	text-align: center;
+	display: block;
+	color: white;
+	font-weight: 700;
+	font-size: 18px;
+	text-transform: uppercase;
+}
+
+.social-sub-line {
+	text-align: center;
+}
+
+.skype img {
+	width:25px;
+	border-radius: 30px;
+}
+
+footer a {
+	color:white;
+}
+
+footer a:hover {
+	text-decoration: underline;
+}
+
+.high {
+	padding-top: 10px;
+}
+
+.low {
+	margin-top: -8px;
+}
+
+.address table {
+	margin:auto;
+	color: white;
+}
+
+.call-us table {
+	margin:auto;
+	color: white;
+}
+
+.rights {
+	padding:20px;
+	text-align: center;
+	font-size: 15px;
+	font-weight: bold;
 }

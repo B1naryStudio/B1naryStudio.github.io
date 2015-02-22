@@ -1,5 +1,6 @@
 angular.module('binaryApp',[])
 	.controller('MainController', ['$http', '$scope', function($http, $scope){
+		$scope.updated = [];
 		$scope.publicTotal = 0;
 		$scope.stargazersTotal = 0;
 		$scope.forksTotal = 0;
@@ -11,8 +12,13 @@ angular.module('binaryApp',[])
 				}
 				$scope.stargazersTotal += item.stargazers_count;
 				$scope.forksTotal += item.forks_count;
+				$scope.updated.push({name: item.name, date: new Date(item.updated_at)});
 			});
+					$scope.updated.sort(function(a, b){
+			return b.date - a.date;
 		});
+		});
+
 		$scope.restricted = [30960505];
 		$scope.icon = {
 			'JavaScript' : 'js.png',
