@@ -38,14 +38,14 @@
 				</div>
 				</div>
 			</div>
-			<div class="statistics">
-				<div class="publicTotal"><span class="numberOf">{{forksTotal}}</span><hr /><span class="underText">Forks</span></div>
-				<div class="publicTotal"><span class="numberOf">{{publicTotal}}</span><hr /><span class="underText">Repos</span></div>
-				<div class="publicTotal"><span class="numberOf">{{stargazersTotal}}</span><hr /><span class="underText">Stars</span></div>
+			<div class="statistics" ng-cloak>
+				<div class="publicTotal"><span class="numberOf">{{ result ? result : 0| totalStarSum: 'forks_count'}}</span><hr /><span class="underText">Forks</span></div>
+				<div class="publicTotal"><span class="numberOf">{{ result ? result : 0 | totalPublic: 'private'}}</span><hr /><span class="underText">Repos</span></div>
+				<div class="publicTotal"><span class="numberOf">{{ result ? result : 0| totalStarSum: 'stargazers_count'}}</span><hr /><span class="underText">Stars</span></div>
 			</div>
 		</div>
 		<div class='repositoriesWrapper'>
-			<div ng-repeat='repository in repositories | filter : filterByCategory' ng-if="repository.language !== null && contains(repository.id)" class='repositoryItem {{repository.language == "C#"? "csharp" : repository.language == "JavaScript" ? "js" : repository.language }}-item'>
+			<div ng-repeat='repository in result = (repositories | filter : filterByCategory)' ng-if="repository.language !== null && contains(repository.id)" class='repositoryItem {{repository.language == "C#"? "csharp" : repository.language == "JavaScript" ? "js" : repository.language }}-item'>
 				<a href='{{repository.html_url}}'>
 					<div class='icon'>
 						<img ng-src='{{icon[repository.language]}}' />

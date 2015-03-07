@@ -51,4 +51,28 @@ angular.module('binaryApp',[])
 	        return true;
 	    }
 
-	}]);
+	}])
+ .filter('totalStarSum', function () {
+    return function (data, key) {
+        if (typeof (data) === 'undefined' && typeof (key) === 'undefined') {
+            return 0;
+        }
+        var sum = 0;
+        for (var i = 0; i < data.length; i++) {
+            sum = sum + data[i][key];
+        }
+        return sum;
+    }
+})
+.filter('totalPublic', function () {
+    return function (data, key) {
+        if (typeof (data) === 'undefined' && typeof (key) === 'undefined') {
+            return 0;
+        }
+        var sum = 0;
+        for (var i = 0; i < data.length; i++) {
+            sum = sum + 1;
+        }
+        return sum;
+    }
+});
