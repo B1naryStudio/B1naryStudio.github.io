@@ -56,6 +56,10 @@ a {
 	/*transition: background-position 1000ms ease-out;*/
 }
 
+.repositoryItem:hover .star, .repositoryItem:hover .additional-info {
+	color:white;
+}
+
 .icon {
 	position: absolute;
 	width:32px;
@@ -462,4 +466,23 @@ footer a:hover {
 
 table {
 	font-size: 14px;
+}
+
+.additional-info {
+	position: absolute;
+	bottom: 10px;
+	left:10px;
+	color: #aaa;
+}
+
+.additional-info .stargazers {
+	display:inline-block;
+}
+
+.star {
+	font-size: 14px;
+}
+.star:before {
+	content: '\2605';
+	font-size: 18px;
 }

@@ -52,6 +52,10 @@
 					</div>
 					<p class="repositoryName">{{repository.name}}</p>
 					<div class="repositoryDescription">{{repository.description}}</div>
+					<div class="additional-info">
+						<div class="stargazers">{{repository.stargazers_count}}</div>
+						<span class="star"></span>
+					</div>
 				</a>
 			</div>
 			<div ng-repeat='repository in repositories | filter : filterByCategory' ng-if="repository.language === null" class='repositoryItem'>
